@@ -1,0 +1,233 @@
+.settings-page{
+    padding:40px;
+    background:var(--color-bg, #f5f7fb);
+    min-height:100vh;
+    font-family:"Segoe UI",Tahoma,sans-serif;
+    color:var(--color-text, #2c3e50);
+}
+
+.settings-page .header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.settings-page .header h1{
+    font-size:36px;
+    margin:0;
+    color:var(--color-primary, #1f3a5f);
+    font-weight:700;
+}
+
+.settings-page .header p{
+    color:var(--color-muted, #6c7a89);
+    margin-top:6px;
+}
+
+.settings-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+    align-items:start;
+}
+
+.settings-page .table-card{
+    background:#fff;
+    border-radius:var(--radius-lg, 22px);
+    padding:28px;
+    box-shadow:var(--shadow-md, 0 10px 25px rgba(0,0,0,.08));
+}
+
+.settings-page .table-card h2{
+    margin:0 0 20px;
+    font-size:18px;
+    color:var(--color-primary, #1f3a5f);
+}
+
+.settings-form{
+    display:flex;
+    flex-direction:column;
+}
+
+.settings-form label{
+    font-weight:600;
+    margin-top:16px;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.settings-form label:first-child{
+    margin-top:0;
+}
+
+.settings-form .input{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--color-border, #d7dee8);
+    border-radius:var(--radius-sm, 8px);
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.settings-form .save-btn{
+    margin-top:26px;
+    padding:14px;
+    border:none;
+    border-radius:var(--radius-md, 14px);
+    background:var(--color-primary-gradient, linear-gradient(135deg,#1f3a5f,#3f6ea5));
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.settings-form .save-btn:hover{
+    transform:translateY(-2px);
+}
+
+.settings-form .save-btn:disabled{
+    opacity:.7;
+    cursor:default;
+    transform:none;
+}
+
+.language-options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.language-option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 18px;
+    border:2px solid var(--color-border, #e3e8ef);
+    border-radius:var(--radius-md, 14px);
+    background:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+    text-align:left;
+}
+
+.language-option:hover{
+    border-color:var(--color-primary-light, #3f6ea5);
+}
+
+.language-option.active{
+    border-color:var(--color-primary, #1f3a5f);
+    background:#eef5ff;
+}
+
+/* Thermal printer section */
+
+.qz-status{
+    padding:12px 14px;
+    border-radius:var(--radius-sm, 8px);
+    font-size:14px;
+    margin-bottom:10px;
+    background:#f7f9fc;
+    color:var(--color-muted, #6c7a89);
+}
+
+.qz-status-connected{
+    background:var(--color-success-bg, #e8f8ee);
+    color:var(--color-success, #198754);
+}
+
+.qz-status-offline{
+    background:var(--color-warning-bg, #fff4e0);
+    color:var(--color-warning, #c98a13);
+}
+
+.printer-form{
+    display:flex;
+    flex-direction:column;
+}
+
+.printer-form label{
+    font-weight:600;
+    margin-top:16px;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.printer-form label:first-child{
+    margin-top:0;
+}
+
+.printer-select-row{
+    display:flex;
+    gap:8px;
+}
+
+.printer-select-row select{
+    flex:1;
+}
+
+.printer-select-row button{
+    padding:0 14px;
+    border:1px solid var(--color-border, #d7dee8);
+    border-radius:var(--radius-sm, 8px);
+    background:#fff;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.printer-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.printer-actions .save-btn{
+    margin-top:0;
+    flex:1;
+}
+
+.test-print-btn{
+    flex:1;
+    padding:14px;
+    border:2px solid var(--color-primary, #1f3a5f);
+    border-radius:var(--radius-md, 14px);
+    background:#fff;
+    color:var(--color-primary, #1f3a5f);
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.test-print-btn:hover:not(:disabled){
+    background:#eef5ff;
+}
+
+.test-print-btn:disabled{
+    opacity:.6;
+    cursor:default;
+}
+
+.link-btn{
+    background:none;
+    border:none;
+    color:var(--color-primary-light, #3f6ea5);
+    font-weight:600;
+    cursor:pointer;
+    padding:4px 0;
+    margin-bottom:10px;
+}
+
+@media (max-width: 600px){
+
+    .settings-page{
+        padding:16px;
+    }
+
+    .settings-page .header h1{
+        font-size:26px;
+    }
+
+}

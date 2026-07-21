@@ -1,0 +1,69 @@
+:root{
+  /* Brand */
+  --color-primary: #1f3a5f;
+  --color-primary-light: #3f6ea5;
+  --color-primary-gradient: linear-gradient(135deg, #1f3a5f, #3f6ea5);
+
+  /* Surfaces */
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-border: #e3e8ef;
+
+  /* Text */
+  --color-text: #2c3e50;
+  --color-muted: #6c7a89;
+
+  /* Semantic */
+  --color-success: #198754;
+  --color-success-bg: #e8f8ee;
+  --color-warning: #c98a13;
+  --color-warning-bg: #fff4e0;
+  --color-danger: #dc3545;
+  --color-danger-bg: #fdeaea;
+  --color-info: #1f5fc9;
+  --color-info-bg: #e6f0ff;
+
+  /* Dashboard stat-card accents */
+  --color-accent-1: #7C3AED;
+  --color-accent-2: #0EA5E9;
+  --color-accent-3: #10B981;
+  --color-accent-4: #F59E0B;
+
+  /* Radii & shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, .08);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, .08);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, .15);
+
+  font: 15px/1.5 "Segoe UI", Tahoma, Arial, sans-serif;
+  color-scheme: light;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+button,
+input,
+select,
+textarea{
+  font-family: inherit;
+}
+
+/* RTL (Arabic) support — flips the sidebar/content order, keeps everything
+   else the same since most pages already use flex/grid layouts */
+html[dir="rtl"] .dashboard{
+  direction: rtl;
+}
+
+html[dir="rtl"] .sidebar nav a{
+  text-align: right;
+}

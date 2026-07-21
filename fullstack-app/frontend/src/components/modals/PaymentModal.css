@@ -1,0 +1,197 @@
+.payment-modal{
+    width:460px;
+    max-width:95vw;
+}
+
+.payment-summary{
+    background:#f7f9fc;
+    border:1px solid #e3e8ef;
+    border-radius:12px;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:6px;
+}
+
+.payment-summary-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.payment-summary-row span{
+    color:#8a94a6;
+}
+
+.payment-services{
+    border:1px solid #e3e8ef;
+    border-radius:12px;
+    padding:4px 16px;
+    margin-bottom:6px;
+}
+
+.payment-service-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #f0f2f5;
+    font-size:14px;
+}
+
+.payment-service-row:last-child{
+    border-bottom:none;
+}
+
+.payment-service-total{
+    font-weight:700;
+    color:#1f3a5f;
+}
+
+.payment-modal label{
+    display:block;
+    font-weight:600;
+    margin-top:16px;
+    margin-bottom:8px;
+}
+
+.payment-modal .input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+/* Payment method cards */
+
+.method-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.method-card{
+    border:2px solid #e3e8ef;
+    border-radius:12px;
+    padding:14px 8px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    font-weight:600;
+    font-size:13px;
+    color:#1f3a5f;
+}
+
+.method-card:hover{
+    border-color:#3f6ea5;
+}
+
+.method-card.active{
+    border-color:#1f3a5f;
+    background:#eef5ff;
+    box-shadow:0 6px 16px rgba(31,58,95,.18);
+}
+
+.method-icon{
+    font-size:26px;
+}
+
+/* Invoice */
+
+.invoice-brand{
+    text-align:center;
+    margin-bottom:18px;
+    padding-bottom:14px;
+    border-bottom:2px dashed #e3e8ef;
+}
+
+.invoice-brand-name{
+    font-size:20px;
+    font-weight:800;
+    color:#1f3a5f;
+}
+
+.invoice-brand-sub{
+    font-size:13px;
+    color:#8a94a6;
+    margin-top:4px;
+}
+
+.invoice-row{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid #f0f2f5;
+    font-size:14px;
+}
+
+.invoice-row span{
+    color:#8a94a6;
+}
+
+.invoice-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:2px dashed #e3e8ef;
+    font-size:18px;
+    font-weight:700;
+    color:#1f3a5f;
+}
+
+/* Responsive */
+
+@media (max-width: 480px){
+
+    .modal.payment-modal{
+        padding:20px;
+    }
+
+    .method-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:6px;
+    }
+
+    .method-card{
+        padding:10px 4px;
+        font-size:11px;
+    }
+
+    .method-icon{
+        font-size:20px;
+    }
+
+}
+
+/* Print */
+
+@media print{
+    body *{
+        visibility:hidden;
+    }
+
+    .invoice-print-area,
+    .invoice-print-area *{
+        visibility:visible;
+    }
+
+    .invoice-print-area{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .no-print{
+        display:none !important;
+    }
+}

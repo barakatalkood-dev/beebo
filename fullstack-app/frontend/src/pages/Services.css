@@ -1,0 +1,164 @@
+.services-page{
+    padding:30px;
+}
+
+.services-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.services-header h1{
+    margin:0;
+    font-size:30px;
+}
+
+.services-header p{
+    color:#777;
+    margin-top:5px;
+}
+
+.add-btn{
+    background:var(--color-primary-gradient);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    transform:translateY(-2px);
+}
+
+.toolbar{
+    margin-bottom:20px;
+}
+
+.toolbar input{
+    width:350px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.table-card{
+    background:white;
+    border-radius:12px;
+    overflow-x:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+table{
+    min-width:600px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#f7f7f7;
+}
+
+th{
+    padding:16px;
+    text-align:left;
+}
+
+td{
+    padding:16px;
+    border-top:1px solid #eee;
+}
+
+tr:hover{
+    background:#fafafa;
+}
+
+.edit-btn{
+    background:#3498db;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    margin-right:8px;
+    cursor:pointer;
+}
+
+.delete-btn{
+    background:#e74c3c;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:20px 0 4px;
+}
+
+.pagination button{
+    min-width:38px;
+    height:38px;
+    padding:0 10px;
+    border:1px solid var(--color-border);
+    background:#fff;
+    color:var(--color-primary);
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+}
+
+.pagination button:hover:not(:disabled){
+    border-color:var(--color-primary-light);
+}
+
+.pagination button:disabled{
+    opacity:.4;
+    cursor:default;
+}
+
+.pagination button.active-page{
+    background:var(--color-primary-gradient);
+    color:#fff;
+    border-color:transparent;
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+
+    .services-page{
+        padding:18px;
+    }
+
+    .services-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+    }
+
+    .services-header h1{
+        font-size:24px;
+    }
+
+    .add-btn{
+        width:100%;
+    }
+
+    .toolbar input{
+        width:100%;
+    }
+
+}
