@@ -5,6 +5,7 @@ import AddServiceModal from "../components/modals/AddServiceModal";
 import EditServiceModal from "../components/modals/EditServiceModal";
 import DeleteConfirmModal from "../components/modals/DeleteConfirmModal";
 import { API_BASE_URL } from "../config/api";
+import { formatOMR } from "../utils/currency";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -116,17 +117,17 @@ function Services() {
 
                 <tr key={service.id}>
 
-                  <td>{service.id}</td>
+                  <td data-label="#">{service.id}</td>
 
-                  <td>{service.name}</td>
+                  <td data-label="Service">{service.name}</td>
 
-                  <td>{service.description}</td>
+                  <td data-label="Description">{service.description}</td>
 
-                  <td>{service.duration} min</td>
+                  <td data-label="Duration">{service.duration} min</td>
 
-                  <td>{service.price} OMR</td>
+                  <td data-label="Price">{formatOMR(service.price)}</td>
 
-                  <td>
+                  <td data-label="Actions">
 
                     <button
                       className="edit-btn"

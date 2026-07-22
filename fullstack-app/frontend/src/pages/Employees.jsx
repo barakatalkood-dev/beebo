@@ -136,15 +136,15 @@ const [selectedEmployee, setSelectedEmployee] = useState(null);
 
                 <tr key={employee.id}>
 
-                  <td>{employee.id}</td>
+                  <td data-label="ID">{employee.id}</td>
 
-                  <td>{employee.full_name}</td>
+                  <td data-label="Full Name">{employee.full_name}</td>
 
-                  <td>{employee.email}</td>
+                  <td data-label="Email">{employee.email}</td>
 
-                  <td>{employee.phone || "-"}</td>
+                  <td data-label="Phone">{employee.phone || "-"}</td>
 
-                  <td>
+                  <td data-label="Role">
                     <span
                       className={
                         employee.role === "admin"
@@ -156,7 +156,7 @@ const [selectedEmployee, setSelectedEmployee] = useState(null);
                     </span>
                   </td>
 
-                  <td>
+                  <td data-label="Actions">
 
                    <button
   className="edit-btn"

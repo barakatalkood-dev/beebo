@@ -8,6 +8,7 @@ import {
 } from "recharts";
 
 import "./RevenueChart.css";
+import { formatOMR } from "../../utils/currency";
 
 function formatDay(dateStr) {
   const [, m, d] = dateStr.split("-");
@@ -37,7 +38,7 @@ function RevenueChart({ data = [], title = "Revenue" }) {
             <YAxis />
 
             <Tooltip
-              formatter={(value) => [`$${Number(value).toFixed(2)}`, "Revenue"]}
+              formatter={(value) => [formatOMR(value), "Revenue"]}
               labelFormatter={(label, payload) => payload?.[0]?.payload?.date || label}
             />
 

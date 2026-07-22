@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "./Modal.css";
 import "./AppointmentModal.css";
 import { API_BASE_URL as API } from "../../config/api";
+import { formatOMR } from "../../utils/currency";
 
 function AddAppointmentModal({ open, onClose, onSave }) {
   const token = localStorage.getItem("token");
@@ -301,7 +302,7 @@ function AddAppointmentModal({ open, onClose, onSave }) {
                   {isSelected && <span className="service-check">✓</span>}
                   <div className="service-name">{service.name}</div>
                   <div className="service-meta">
-                    <span>${Number(service.price).toFixed(2)}</span>
+                    <span>{formatOMR(service.price)}</span>
                     <span>{service.duration} min</span>
                   </div>
                 </div>
@@ -316,7 +317,7 @@ function AddAppointmentModal({ open, onClose, onSave }) {
           {selectedServices.length > 0 && (
             <div className="services-total">
               <span>{selectedServices.length} service(s) selected</span>
-              <strong>${totalPrice.toFixed(2)} · {totalDuration} min</strong>
+              <strong>{formatOMR(totalPrice)} · {totalDuration} min</strong>
             </div>
           )}
 
@@ -377,7 +378,7 @@ function AddAppointmentModal({ open, onClose, onSave }) {
             onClick={handleSave}
             disabled={saving}
           >
-            {saving ? "Saving..." : `Save Appointment${selectedServices.length > 0 ? ` · $${totalPrice.toFixed(2)}` : ""}`}
+            {saving ? "Saving..." : `Save Appointment${selectedServices.length > 0 ? ` · ${formatOMR(totalPrice)}` : ""}`}
           </button>
         </div>
 

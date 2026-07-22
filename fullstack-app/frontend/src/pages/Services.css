@@ -188,8 +188,78 @@ tr:hover{
         padding:14px;
     }
 
+    .services-header h1{
+        font-size:20px;
+    }
+
     .table-card{
         border-radius:14px;
+        overflow-x:visible;
+        background:none;
+        box-shadow:none;
+    }
+
+    thead{
+        display:none;
+    }
+
+    table{
+        min-width:0;
+    }
+
+    table, tbody, tr, td{
+        display:block;
+        width:100%;
+    }
+
+    tbody tr{
+        background:var(--color-surface);
+        border:1px solid var(--color-border);
+        border-radius:14px;
+        margin-bottom:14px;
+        padding:10px;
+        box-shadow:var(--shadow-sm);
+    }
+
+    tr:hover{
+        background:var(--color-surface);
+    }
+
+    td{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        text-align:right;
+        border-top:none;
+        border-bottom:1px solid var(--color-bg);
+        padding:10px 6px;
+        gap:10px;
+    }
+
+    td:last-child{
+        border-bottom:none;
+    }
+
+    td::before{
+        content:attr(data-label);
+        font-weight:600;
+        color:var(--color-muted);
+        text-align:left;
+        flex-shrink:0;
+    }
+
+    .edit-btn{
+        margin-right:0;
+    }
+
+    td[data-label="Actions"]{
+        flex-wrap:wrap;
+        justify-content:flex-end;
+        gap:8px;
+    }
+
+    td[data-label="Actions"]::before{
+        display:none;
     }
 
 }

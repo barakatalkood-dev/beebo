@@ -136,15 +136,15 @@ function Customers() {
 
                 <tr key={customer.id}>
 
-                  <td>{customer.id}</td>
+                  <td data-label="ID">{customer.id}</td>
 
-                  <td>{customer.full_name}</td>
+                  <td data-label="Full Name">{customer.full_name}</td>
 
-                  <td>{customer.phone}</td>
+                  <td data-label="Phone">{customer.phone}</td>
 
-                  <td>{customer.email || "-"}</td>
+                  <td data-label="Email">{customer.email || "-"}</td>
 
-                  <td>
+                  <td data-label="Actions">
 
                    <button
   className="edit-btn"

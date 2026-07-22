@@ -1,3 +1,5 @@
+import { formatOMR } from "./currency";
+
 const ESC = "\x1B";
 const GS = "\x1D";
 
@@ -66,13 +68,13 @@ export function buildReceiptCommands(invoice, { width = 32, storeName = "Beebo B
   lines.push(divider(width) + "\n");
 
   (invoice.services || []).forEach((s) => {
-    lines.push(twoColumns(s.name, `$${Number(s.price).toFixed(2)}`, width) + "\n");
+    lines.push(twoColumns(s.name, formatOMR(s.price), width) + "\n");
   });
 
   lines.push(divider(width) + "\n");
 
   lines.push(CMD.BOLD_ON);
-  lines.push(twoColumns("TOTAL PAID", `$${Number(invoice.paid_amount).toFixed(2)}`, width) + "\n");
+  lines.push(twoColumns("TOTAL PAID", formatOMR(invoice.paid_amount), width) + "\n");
   lines.push(CMD.BOLD_OFF);
 
   lines.push(

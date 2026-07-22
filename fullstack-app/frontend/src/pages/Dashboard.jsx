@@ -7,6 +7,7 @@ import RecentAppointments from "../components/tables/RecentAppointments";
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
 import { API_BASE_URL as API } from "../config/api";
+import { formatOMR } from "../utils/currency";
 
 const REFRESH_INTERVAL = 30000; // 30 seconds
 
@@ -107,7 +108,7 @@ function Dashboard() {
 
             <StatCard
               title={t("today_revenue")}
-              value={`$${Number(stats.revenueToday).toFixed(2)}`}
+              value={formatOMR(stats.revenueToday)}
               icon="💰"
               color="var(--color-accent-4)"
             />

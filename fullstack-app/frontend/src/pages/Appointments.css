@@ -266,9 +266,21 @@ td{
         padding:14px;
     }
 
+    .header h1{
+        font-size:22px;
+    }
+
+    .header p{
+        font-size:13px;
+    }
+
     .card{
-        padding:14px;
+        padding:12px;
         border-radius:16px;
+    }
+
+    .table-section-title{
+        font-size:16px;
     }
 
     thead{

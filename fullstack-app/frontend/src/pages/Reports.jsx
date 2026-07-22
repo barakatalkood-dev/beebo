@@ -4,6 +4,7 @@ import StatCard from "../components/cards/StatCard";
 import RevenueChart from "../components/charts/RevenueChart";
 import "./Reports.css";
 import { API_BASE_URL as API } from "../config/api";
+import { formatOMR } from "../utils/currency";
 
 const STATUS_LABELS = {
   pending: "Pending",
@@ -114,7 +115,7 @@ function Reports() {
 
         <StatCard
           title="Total Revenue"
-          value={`$${Number(summary.totalRevenue || 0).toFixed(2)}`}
+          value={formatOMR(summary.totalRevenue)}
           icon="💰"
           color="#F59E0B"
         />
@@ -128,7 +129,7 @@ function Reports() {
 
         <StatCard
           title="Avg Ticket"
-          value={`$${Number(summary.avgTicket || 0).toFixed(2)}`}
+          value={formatOMR(summary.avgTicket)}
           icon="🧾"
           color="#7C3AED"
         />
@@ -171,7 +172,7 @@ function Reports() {
             {Object.keys(METHOD_LABELS).map((key) => (
               <div className="breakdown-row" key={key}>
                 <span>{METHOD_LABELS[key]}</span>
-                <strong>${Number(paymentBreakdown[key] || 0).toFixed(2)}</strong>
+                <strong>{formatOMR(paymentBreakdown[key])}</strong>
               </div>
             ))}
           </div>
@@ -195,9 +196,9 @@ function Reports() {
             {topServices.length > 0 ? (
               topServices.map((s) => (
                 <tr key={s.id}>
-                  <td>{s.name}</td>
-                  <td>{s.bookings}</td>
-                  <td>${s.revenue.toFixed(2)}</td>
+                  <td data-label="Service">{s.name}</td>
+                  <td data-label="Bookings">{s.bookings}</td>
+                  <td data-label="Revenue">{formatOMR(s.revenue)}</td>
                 </tr>
               ))
             ) : (
@@ -227,9 +228,9 @@ function Reports() {
             {employeePerformance.length > 0 ? (
               employeePerformance.map((e) => (
                 <tr key={e.id}>
-                  <td>{e.name}</td>
-                  <td>{e.appointments}</td>
-                  <td>${e.revenue.toFixed(2)}</td>
+                  <td data-label="Employee">{e.name}</td>
+                  <td data-label="Appointments">{e.appointments}</td>
+                  <td data-label="Revenue">{formatOMR(e.revenue)}</td>
                 </tr>
               ))
             ) : (

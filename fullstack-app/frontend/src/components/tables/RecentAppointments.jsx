@@ -38,19 +38,19 @@ function RecentAppointments({ appointments = [] }) {
 
               <tr key={item.id}>
 
-                <td>{item.Customer?.full_name || "-"}</td>
+                <td data-label="Customer">{item.Customer?.full_name || "-"}</td>
 
-                <td>{item.services?.length > 0 ? item.services.join(", ") : "-"}</td>
+                <td data-label="Service">{item.services?.length > 0 ? item.services.join(", ") : "-"}</td>
 
-                <td>{item.User?.full_name || "-"}</td>
+                <td data-label="Employee">{item.User?.full_name || "-"}</td>
 
-                <td>
+                <td data-label="Date">
                   {item.appointment_date}
                   <br />
                   <small>{item.appointment_time?.slice(0, 5)}</small>
                 </td>
 
-                <td>
+                <td data-label="Status">
                   <span className={`ra-badge ra-status-${item.status}`}>
                     {STATUS_LABELS[item.status] || item.status}
                   </span>

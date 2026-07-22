@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "./Modal.css";
 import "./AppointmentModal.css";
 import { API_BASE_URL as API } from "../../config/api";
+import { formatOMR } from "../../utils/currency";
 
 const STATUSES = ["pending", "confirmed", "completed", "cancelled"];
 
@@ -198,7 +199,7 @@ function EditAppointmentModal({ open, appointment, onClose, onSave }) {
                   {isSelected && <span className="service-check">✓</span>}
                   <div className="service-name">{service.name}</div>
                   <div className="service-meta">
-                    <span>${Number(service.price).toFixed(2)}</span>
+                    <span>{formatOMR(service.price)}</span>
                     <span>{service.duration} min</span>
                   </div>
                 </div>
@@ -209,7 +210,7 @@ function EditAppointmentModal({ open, appointment, onClose, onSave }) {
           {selectedServices.length > 0 && (
             <div className="services-total">
               <span>{selectedServices.length} service(s) selected</span>
-              <strong>${totalPrice.toFixed(2)} · {totalDuration} min</strong>
+              <strong>{formatOMR(totalPrice)} · {totalDuration} min</strong>
             </div>
           )}
 

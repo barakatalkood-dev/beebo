@@ -63,11 +63,44 @@ td{
 
     .table-card{
         padding:14px;
-        overflow-x:auto;
     }
 
-    table{
-        min-width:520px;
+    thead{
+        display:none;
+    }
+
+    table, tbody, tr, td{
+        display:block;
+        width:100%;
+    }
+
+    tbody tr{
+        border:1px solid var(--color-border);
+        border-radius:14px;
+        margin-bottom:12px;
+        padding:8px;
+    }
+
+    td{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        text-align:right;
+        border-bottom:1px solid var(--color-bg);
+        padding:10px 8px;
+        gap:10px;
+    }
+
+    td:last-child{
+        border-bottom:none;
+    }
+
+    td::before{
+        content:attr(data-label);
+        font-weight:600;
+        color:var(--color-muted);
+        text-align:left;
+        flex-shrink:0;
     }
 
 }

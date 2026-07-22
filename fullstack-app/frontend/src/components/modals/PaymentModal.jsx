@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { printReceipt } from "../../utils/thermalPrinter";
 import { API_BASE_URL as API } from "../../config/api";
+import { formatOMR } from "../../utils/currency";
 import "./Modal.css";
 import "./PaymentModal.css";
 
@@ -130,12 +131,12 @@ function PaymentModal({ open, appointment, onClose, onPaid }) {
               {(appointment.services || []).map((s) => (
                 <div className="payment-service-row" key={s.id}>
                   <span>{s.name}</span>
-                  <strong>${Number(s.price).toFixed(2)}</strong>
+                  <strong>{formatOMR(s.price)}</strong>
                 </div>
               ))}
               <div className="payment-service-row payment-service-total">
                 <span>Total</span>
-                <strong>${Number(appointment.total_price || 0).toFixed(2)}</strong>
+                <strong>{formatOMR(appointment.total_price)}</strong>
               </div>
             </div>
 
@@ -224,14 +225,14 @@ function PaymentModal({ open, appointment, onClose, onPaid }) {
                 {(invoice.services || []).map((s) => (
                   <div className="invoice-row" key={s.id}>
                     <span>{s.name}</span>
-                    <strong>${Number(s.price).toFixed(2)}</strong>
+                    <strong>{formatOMR(s.price)}</strong>
                   </div>
                 ))}
               </div>
 
               <div className="invoice-total">
                 <span>Total Paid</span>
-                <strong>${Number(invoice.paid_amount).toFixed(2)}</strong>
+                <strong>{formatOMR(invoice.paid_amount)}</strong>
               </div>
 
             </div>
