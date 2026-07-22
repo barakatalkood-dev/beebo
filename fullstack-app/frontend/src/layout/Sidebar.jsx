@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -23,6 +23,8 @@ function Sidebar({ open, onClose }) {
     navigate("/login");
   };
 
+  const linkClass = ({ isActive }) => (isActive ? "active" : "");
+
   return (
     <>
       <aside className={`sidebar ${open ? "sidebar-open" : ""}`}>
@@ -33,46 +35,46 @@ function Sidebar({ open, onClose }) {
 
         <nav>
 
-          <Link to="/dashboard" onClick={onClose}>
+          <NavLink to="/dashboard" className={linkClass} onClick={onClose}>
             <FaHome />
             {t("dashboard")}
-          </Link>
+          </NavLink>
 
           {user?.role === "admin" && (
-            <Link to="/services" onClick={onClose}>
+            <NavLink to="/services" className={linkClass} onClick={onClose}>
               <FaCut />
               {t("services")}
-            </Link>
+            </NavLink>
           )}
 
           {user?.role === "admin" && (
-            <Link to="/employees" onClick={onClose}>
+            <NavLink to="/employees" className={linkClass} onClick={onClose}>
               <FaUsers />
               {t("employees")}
-            </Link>
+            </NavLink>
           )}
 
-          <Link to="/appointments" onClick={onClose}>
+          <NavLink to="/appointments" className={linkClass} onClick={onClose}>
             <FaCalendarAlt />
             {t("appointments")}
-          </Link>
+          </NavLink>
 
-          <Link to="/customers" onClick={onClose}>
+          <NavLink to="/customers" className={linkClass} onClick={onClose}>
             <FaUserFriends />
             {t("customers")}
-          </Link>
+          </NavLink>
 
           {user?.role === "admin" && (
-            <Link to="/reports" onClick={onClose}>
+            <NavLink to="/reports" className={linkClass} onClick={onClose}>
               <FaChartBar />
               {t("reports")}
-            </Link>
+            </NavLink>
           )}
 
-          <Link to="/settings" onClick={onClose}>
+          <NavLink to="/settings" className={linkClass} onClick={onClose}>
             <FaCog />
             {t("settings")}
-          </Link>
+          </NavLink>
 
           <button
             className="logout-btn"

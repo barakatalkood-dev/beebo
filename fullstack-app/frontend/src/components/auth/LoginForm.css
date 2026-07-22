@@ -7,29 +7,30 @@
     margin-bottom:8px;
     font-size:14px;
     font-weight:600;
-    color:#444;
+    color:var(--color-text, #444);
 }
 
 .input-group input{
     width:100%;
     height:52px;
-    border:1px solid #dcdfe6;
+    border:1px solid var(--color-border, #dcdfe6);
     border-radius:12px;
     padding:0 16px;
     font-size:15px;
     transition:.3s;
     outline:none;
-    background:#fafafa;
+    background:var(--color-bg, #fafafa);
+    box-sizing:border-box;
 }
 
 .input-group input:focus{
-    border-color:#6a11cb;
-    background:#fff;
-    box-shadow:0 0 0 4px rgba(106,17,203,.12);
+    border-color:var(--color-primary, #C77B95);
+    background:var(--color-surface, #fff);
+    box-shadow:0 0 0 4px rgba(199,123,149,.14);
 }
 
 .input-group small{
-    color:#e53935;
+    color:var(--color-danger, #e53935);
     margin-top:6px;
     display:block;
     font-size:13px;
@@ -52,16 +53,16 @@
     background:none;
     cursor:pointer;
     font-size:18px;
-    color:#777;
+    color:var(--color-muted, #777);
 }
 
 .eye-btn:hover{
-    color:#6a11cb;
+    color:var(--color-primary, #C77B95);
 }
 
 .login-options{
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items:center;
     margin-bottom:25px;
     font-size:14px;
@@ -71,17 +72,15 @@
     display:flex;
     align-items:center;
     gap:8px;
-    color:#555;
+    color:var(--color-muted, #555);
+    cursor:pointer;
 }
 
-.login-options a{
-    text-decoration:none;
-    color:#6a11cb;
-    font-weight:600;
-}
-
-.login-options a:hover{
-    text-decoration:underline;
+.login-options input[type="checkbox"]{
+    width:16px;
+    height:16px;
+    accent-color:var(--color-primary, #C77B95);
+    cursor:pointer;
 }
 
 .login-btn{
@@ -89,7 +88,7 @@
     height:54px;
     border:none;
     border-radius:14px;
-    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    background:var(--color-primary-gradient, linear-gradient(135deg,#C77B95,#D4A857));
     color:#fff;
     font-size:16px;
     font-weight:700;
@@ -99,7 +98,7 @@
 
 .login-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(37,117,252,.35);
+    box-shadow:0 10px 25px rgba(199,123,149,.35);
 }
 
 .login-btn:disabled{

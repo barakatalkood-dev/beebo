@@ -16,8 +16,8 @@
     max-width:100%;
     max-height:92vh;
     overflow:auto;
-    background:#fff;
-    border-radius:15px;
+    background:var(--color-surface, #fff);
+    border-radius:var(--radius-md, 15px);
     padding:25px;
     box-sizing:border-box;
 
@@ -26,6 +26,7 @@
 
 .modal h2{
     margin-bottom:20px;
+    color:var(--color-primary-dark, #333);
 }
 
 .modal form{
@@ -40,10 +41,17 @@
     width:100%;
     padding:12px;
 
-    border:1px solid #ddd;
+    border:1px solid var(--color-border, #ddd);
     border-radius:8px;
 
     font-size:15px;
+}
+
+.modal input:focus,
+.modal select:focus{
+    outline:none;
+    border-color:var(--color-primary, #999);
+    box-shadow:0 0 0 3px rgba(199,123,149,.15);
 }
 
 .modal-actions{

@@ -20,7 +20,6 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const customerRoutes = require("./routes/customerRoutes");
 const appointmentRoutes = require("./routes/appointmentRoutes");
 const reportRoutes = require("./routes/reportRoutes");
-const setupRoutes = require("./routes/setupRoutes");
 
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/customers", customerRoutes);
@@ -28,7 +27,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/reports", reportRoutes);
-app.use("/api/setup", setupRoutes);
 
 
 app.use("/api/services", serviceRoutes);

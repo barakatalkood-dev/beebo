@@ -2,11 +2,11 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI", Arial, Helvetica, sans-serif;
+    font-family:var(--font-body);
 }
 
 body{
-    background:var(--color-bg, #f4f6f9);
+    background:var(--color-bg);
 }
 
 .dashboard{
@@ -17,38 +17,53 @@ body{
 .sidebar{
     width:260px;
     flex-shrink:0;
-    background:#1f2937;
-    color:white;
+    background:#3A2438;
+    color:#fff;
     display:flex;
     flex-direction:column;
 }
 
 .logo{
     padding:25px;
+    font-family:var(--font-heading);
     font-size:24px;
-    font-weight:bold;
+    font-weight:700;
     text-align:center;
-    border-bottom:1px solid rgba(255,255,255,.1);
+    border-bottom:1px solid rgba(255,255,255,.12);
+    background:var(--color-primary-gradient);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .sidebar nav{
     display:flex;
     flex-direction:column;
     margin-top:20px;
+    gap:2px;
 }
 
 .sidebar nav a{
-    color:white;
+    color:rgba(255,255,255,.85);
     text-decoration:none;
-    padding:16px 25px;
+    padding:14px 25px;
     display:flex;
     align-items:center;
     gap:12px;
-    transition:.3s;
+    transition:.2s;
+    border-left:3px solid transparent;
 }
 
 .sidebar nav a:hover{
-    background:#374151;
+    background:rgba(255,255,255,.06);
+    color:#fff;
+}
+
+.sidebar nav a.active{
+    background:rgba(212,168,87,.14);
+    border-left-color:var(--color-accent);
+    color:#fff;
+    font-weight:600;
 }
 
 .main-content{
@@ -60,17 +75,19 @@ body{
 
 .header{
     height:70px;
-    background:white;
+    background:var(--color-surface);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:0 30px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    box-shadow:0 2px 10px rgba(199,123,149,.08);
     gap:16px;
 }
 
 .header h2{
     flex:1;
+    color:var(--color-primary-dark);
+    font-size:22px;
 }
 
 .hamburger-btn{
@@ -78,7 +95,7 @@ body{
     background:none;
     border:none;
     font-size:20px;
-    color:var(--color-primary, #1f3a5f);
+    color:var(--color-primary);
     cursor:pointer;
     padding:6px;
 }
@@ -121,14 +138,14 @@ body{
 
 .header-bell{
     font-size:20px;
-    color:#6c7a89;
+    color:var(--color-muted);
 }
 
 .bell-badge{
     position:absolute;
     top:-2px;
     right:-2px;
-    background:var(--color-danger, #dc3545);
+    background:var(--color-danger);
     color:#fff;
     font-size:11px;
     font-weight:700;
@@ -147,9 +164,9 @@ body{
     right:0;
     width:320px;
     max-width:90vw;
-    background:#fff;
-    border-radius:14px;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    background:var(--color-surface);
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-lg);
     overflow:hidden;
     z-index:50;
 }
@@ -160,23 +177,23 @@ body{
     align-items:center;
     padding:12px 10px 12px 18px;
     font-weight:700;
-    color:var(--color-primary, #1f3a5f);
-    background:#f7f9fc;
-    border-bottom:1px solid #eef1f5;
+    color:var(--color-primary-dark);
+    background:var(--color-bg);
+    border-bottom:1px solid var(--color-border);
 }
 
 .notification-close{
     background:none;
     border:none;
     font-size:20px;
-    color:#8a94a6;
+    color:var(--color-muted);
     cursor:pointer;
     padding:4px 10px;
 }
 
 .notification-empty{
     padding:20px 18px;
-    color:#8a94a6;
+    color:var(--color-muted);
     font-size:14px;
     text-align:center;
 }
@@ -186,7 +203,7 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:12px 8px 12px 18px;
-    border-bottom:1px solid #f2f4f7;
+    border-bottom:1px solid var(--color-border);
     gap:8px;
 }
 
@@ -202,7 +219,7 @@ body{
 }
 
 .notification-item-main span{
-    color:#8a94a6;
+    color:var(--color-muted);
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
@@ -210,7 +227,7 @@ body{
 
 .notification-item-time{
     font-weight:700;
-    color:var(--color-primary, #1f3a5f);
+    color:var(--color-primary-dark);
     font-size:13px;
     white-space:nowrap;
 }
@@ -219,14 +236,14 @@ body{
     background:none;
     border:none;
     font-size:16px;
-    color:#c3cad4;
+    color:var(--color-border);
     cursor:pointer;
     padding:2px 6px;
     flex-shrink:0;
 }
 
 .notification-dismiss:hover{
-    color:var(--color-danger, #dc3545);
+    color:var(--color-danger);
 }
 
 .header-profile{
@@ -234,14 +251,14 @@ body{
     align-items:center;
     gap:12px;
     padding-left:18px;
-    border-left:1px solid #eee;
+    border-left:1px solid var(--color-border);
 }
 
 .header-avatar{
     width:42px;
     height:42px;
     border-radius:50%;
-    background:var(--color-primary-gradient, linear-gradient(135deg,#1f3a5f,#3f6ea5));
+    background:var(--color-primary-gradient);
     color:#fff;
     display:flex;
     align-items:center;
@@ -260,12 +277,12 @@ body{
 .header-user-name{
     font-size:14px;
     font-weight:600;
-    color:#1f2937;
+    color:var(--color-text);
 }
 
 .header-user-role{
     font-size:12px;
-    color:#8a94a6;
+    color:var(--color-muted);
     text-transform:capitalize;
 }
 
@@ -284,7 +301,7 @@ body{
 }
 
 .logout-btn:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
 }
 
 /* ============================
@@ -352,10 +369,16 @@ body{
 
     .header{
         height:60px;
+        padding:0 12px;
+        gap:8px;
     }
 
     .header h2{
         font-size:16px;
+    }
+
+    .header-right{
+        gap:10px;
     }
 
     .cards{
@@ -372,11 +395,37 @@ body{
 
 }
 
+@media (max-width: 380px){
+
+    .header-avatar{
+        width:36px;
+        height:36px;
+        font-size:13px;
+    }
+
+}
+
 /* RTL: sidebar/hamburger mirror to the right */
 
 html[dir="rtl"] .sidebar{
     left:auto;
     right:0;
+}
+
+html[dir="rtl"] .sidebar nav a{
+    border-left:none;
+    border-right:3px solid transparent;
+}
+
+html[dir="rtl"] .sidebar nav a.active{
+    border-right-color:var(--color-accent);
+}
+
+html[dir="rtl"] .header-profile{
+    border-left:none;
+    border-right:1px solid var(--color-border);
+    padding-left:0;
+    padding-right:18px;
 }
 
 @media (max-width: 900px){

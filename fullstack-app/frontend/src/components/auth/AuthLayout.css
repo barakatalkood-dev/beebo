@@ -8,8 +8,8 @@
   width:100%;
   min-height:100vh;
   display:flex;
-  background:#f7f8fc;
-  font-family:'Segoe UI',sans-serif;
+  background:var(--color-bg, #FDF6F3);
+  font-family:var(--font-body, 'Segoe UI', sans-serif);
 }
 
 .auth-left{
@@ -19,7 +19,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#6a11cb,#2575fc);
+  background:var(--color-primary-gradient, linear-gradient(135deg,#C77B95,#D4A857));
 }
 
 .overlay{
@@ -30,20 +30,23 @@
 }
 
 .overlay h1{
-  font-size:48px;
-  margin-bottom:20px;
+  font-family:var(--font-heading, Georgia, serif);
+  font-size:52px;
+  margin-bottom:16px;
   font-weight:700;
+  letter-spacing:.5px;
 }
 
 .overlay p{
-  font-size:20px;
-  opacity:.9;
+  font-size:19px;
+  opacity:.92;
+  letter-spacing:.5px;
 }
 
 .circle{
   position:absolute;
   border-radius:50%;
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.14);
   animation:float 8s infinite ease-in-out;
 }
 
@@ -76,26 +79,27 @@
   justify-content:center;
   align-items:center;
   padding:40px;
-  background:#f5f7fb;
+  background:var(--color-bg, #FDF6F3);
 }
 
 .auth-card{
   width:100%;
   max-width:470px;
-  background:#fff;
-  border-radius:22px;
+  background:var(--color-surface, #fff);
+  border-radius:var(--radius-lg, 22px);
   padding:45px;
-  box-shadow:0 20px 60px rgba(0,0,0,.08);
+  box-shadow:var(--shadow-lg, 0 20px 60px rgba(0,0,0,.08));
 }
 
 .auth-card h2{
-  font-size:34px;
-  color:#222;
+  font-family:var(--font-heading, Georgia, serif);
+  font-size:32px;
+  color:var(--color-primary-dark, #A85C76);
   margin-bottom:10px;
 }
 
 .auth-card p{
-  color:#777;
+  color:var(--color-muted, #8A7680);
   margin-bottom:35px;
   line-height:1.6;
 }
@@ -123,15 +127,46 @@ flex-direction:column;
 }
 
 .auth-left{
-min-height:280px;
-}
-
-.auth-card{
-margin:30px 0;
+min-height:220px;
 }
 
 .overlay h1{
-font-size:34px;
+font-size:32px;
+margin-bottom:8px;
+}
+
+.overlay p{
+font-size:15px;
+}
+
+.auth-right{
+padding:24px;
+}
+
+.auth-card{
+margin:0;
+padding:32px 28px;
+}
+
+.auth-card h2{
+font-size:26px;
+}
+
+}
+
+@media(max-width:420px){
+
+.auth-left{
+min-height:170px;
+}
+
+.overlay h1{
+font-size:26px;
+}
+
+.auth-card{
+padding:26px 20px;
+border-radius:18px;
 }
 
 }

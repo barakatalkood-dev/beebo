@@ -14,9 +14,9 @@
 }
 
 .settings-page .header h1{
-    font-size:36px;
+    font-size:34px;
     margin:0;
-    color:var(--color-primary, #1f3a5f);
+    color:var(--color-primary-dark);
     font-weight:700;
 }
 
@@ -120,7 +120,7 @@
 
 .language-option.active{
     border-color:var(--color-primary, #1f3a5f);
-    background:#eef5ff;
+    background:var(--color-primary-bg);
 }
 
 /* Thermal printer section */
@@ -202,7 +202,7 @@
 }
 
 .test-print-btn:hover:not(:disabled){
-    background:#eef5ff;
+    background:var(--color-primary-bg);
 }
 
 .test-print-btn:disabled{

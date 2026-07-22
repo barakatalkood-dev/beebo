@@ -1,5 +1,6 @@
 .services-page{
     padding:30px;
+    color:var(--color-text);
 }
 
 .services-header{
@@ -12,10 +13,11 @@
 .services-header h1{
     margin:0;
     font-size:30px;
+    color:var(--color-primary-dark);
 }
 
 .services-header p{
-    color:#777;
+    color:var(--color-muted);
     margin-top:5px;
 }
 
@@ -40,63 +42,79 @@
 
 .toolbar input{
     width:350px;
+    max-width:100%;
     padding:12px;
-    border:1px solid #ddd;
+    border:1px solid var(--color-border);
     border-radius:8px;
     font-size:15px;
 }
 
+.toolbar input:focus{
+    outline:none;
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px rgba(199,123,149,.15);
+}
+
 .table-card{
-    background:white;
-    border-radius:12px;
+    background:var(--color-surface);
+    border-radius:var(--radius-md);
     overflow-x:auto;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:var(--shadow-sm);
 }
 
 table{
     min-width:600px;
-}
-
-table{
     width:100%;
     border-collapse:collapse;
 }
 
 thead{
-    background:#f7f7f7;
+    background:var(--color-bg);
 }
 
 th{
     padding:16px;
     text-align:left;
+    color:var(--color-muted);
+    font-size:13px;
 }
 
 td{
     padding:16px;
-    border-top:1px solid #eee;
+    border-top:1px solid var(--color-border);
 }
 
 tr:hover{
-    background:#fafafa;
+    background:var(--color-bg);
 }
 
 .edit-btn{
-    background:#3498db;
+    background:var(--color-info);
     color:white;
     border:none;
     padding:8px 14px;
     border-radius:6px;
     margin-right:8px;
     cursor:pointer;
+    font-weight:600;
+}
+
+.edit-btn:hover{
+    opacity:.88;
 }
 
 .delete-btn{
-    background:#e74c3c;
+    background:var(--color-danger);
     color:white;
     border:none;
     padding:8px 14px;
     border-radius:6px;
     cursor:pointer;
+    font-weight:600;
+}
+
+.delete-btn:hover{
+    opacity:.88;
 }
 
 .pagination{
@@ -105,6 +123,7 @@ tr:hover{
     align-items:center;
     gap:8px;
     padding:20px 0 4px;
+    flex-wrap:wrap;
 }
 
 .pagination button{
@@ -112,8 +131,8 @@ tr:hover{
     height:38px;
     padding:0 10px;
     border:1px solid var(--color-border);
-    background:#fff;
-    color:var(--color-primary);
+    background:var(--color-surface);
+    color:var(--color-primary-dark);
     border-radius:8px;
     cursor:pointer;
     font-weight:600;
@@ -159,6 +178,18 @@ tr:hover{
 
     .toolbar input{
         width:100%;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .services-page{
+        padding:14px;
+    }
+
+    .table-card{
+        border-radius:14px;
     }
 
 }

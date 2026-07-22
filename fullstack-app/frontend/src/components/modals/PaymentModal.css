@@ -4,8 +4,8 @@
 }
 
 .payment-summary{
-    background:#f7f9fc;
-    border:1px solid #e3e8ef;
+    background:var(--color-bg);
+    border:1px solid var(--color-border);
     border-radius:12px;
     padding:14px 16px;
     display:flex;
@@ -21,11 +21,11 @@
 }
 
 .payment-summary-row span{
-    color:#8a94a6;
+    color:var(--color-muted);
 }
 
 .payment-services{
-    border:1px solid #e3e8ef;
+    border:1px solid var(--color-border);
     border-radius:12px;
     padding:4px 16px;
     margin-bottom:6px;
@@ -35,7 +35,7 @@
     display:flex;
     justify-content:space-between;
     padding:10px 0;
-    border-bottom:1px solid #f0f2f5;
+    border-bottom:1px solid var(--color-bg);
     font-size:14px;
 }
 
@@ -45,7 +45,7 @@
 
 .payment-service-total{
     font-weight:700;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
 }
 
 .payment-modal label{
@@ -58,10 +58,16 @@
 .payment-modal .input{
     width:100%;
     padding:12px;
-    border:1px solid #ddd;
+    border:1px solid var(--color-border);
     border-radius:8px;
     font-size:15px;
     box-sizing:border-box;
+}
+
+.payment-modal .input:focus{
+    outline:none;
+    border-color:var(--color-primary);
+    box-shadow:0 0 0 3px rgba(199,123,149,.15);
 }
 
 /* Payment method cards */
@@ -73,7 +79,7 @@
 }
 
 .method-card{
-    border:2px solid #e3e8ef;
+    border:2px solid var(--color-border);
     border-radius:12px;
     padding:14px 8px;
     text-align:center;
@@ -85,17 +91,17 @@
     gap:6px;
     font-weight:600;
     font-size:13px;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
 }
 
 .method-card:hover{
-    border-color:#3f6ea5;
+    border-color:var(--color-primary);
 }
 
 .method-card.active{
-    border-color:#1f3a5f;
-    background:#eef5ff;
-    box-shadow:0 6px 16px rgba(31,58,95,.18);
+    border-color:var(--color-primary-dark);
+    background:var(--color-primary-bg);
+    box-shadow:0 6px 16px rgba(199,123,149,.25);
 }
 
 .method-icon{
@@ -108,18 +114,19 @@
     text-align:center;
     margin-bottom:18px;
     padding-bottom:14px;
-    border-bottom:2px dashed #e3e8ef;
+    border-bottom:2px dashed var(--color-border);
 }
 
 .invoice-brand-name{
-    font-size:20px;
-    font-weight:800;
-    color:#1f3a5f;
+    font-family:var(--font-heading);
+    font-size:22px;
+    font-weight:700;
+    color:var(--color-primary-dark);
 }
 
 .invoice-brand-sub{
     font-size:13px;
-    color:#8a94a6;
+    color:var(--color-muted);
     margin-top:4px;
 }
 
@@ -127,12 +134,12 @@
     display:flex;
     justify-content:space-between;
     padding:8px 0;
-    border-bottom:1px solid #f0f2f5;
+    border-bottom:1px solid var(--color-bg);
     font-size:14px;
 }
 
 .invoice-row span{
-    color:#8a94a6;
+    color:var(--color-muted);
 }
 
 .invoice-total{
@@ -141,10 +148,10 @@
     align-items:center;
     margin-top:16px;
     padding-top:16px;
-    border-top:2px dashed #e3e8ef;
+    border-top:2px dashed var(--color-border);
     font-size:18px;
     font-weight:700;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
 }
 
 /* Responsive */

@@ -44,7 +44,7 @@ function RevenueChart({ data = [], title = "Revenue" }) {
             <Line
               type="monotone"
               dataKey="revenue"
-              stroke="#6C63FF"
+              stroke="#C77B95"
               strokeWidth={3}
               dot={false}
             />

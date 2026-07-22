@@ -1,7 +1,7 @@
 @import "./Services.css";
 
 .role-admin{
-    background:#198754;
+    background:var(--color-accent);
     color:white;
     padding:5px 12px;
     border-radius:20px;
@@ -10,7 +10,7 @@
 }
 
 .role-employee{
-    background:#0d6efd;
+    background:var(--color-info);
     color:white;
     padding:5px 12px;
     border-radius:20px;

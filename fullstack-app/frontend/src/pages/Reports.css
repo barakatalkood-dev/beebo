@@ -1,9 +1,8 @@
 .reports-page{
     padding:40px;
-    background:#f5f7fb;
+    background:var(--color-bg);
     min-height:100vh;
-    font-family:"Segoe UI",Tahoma,sans-serif;
-    color:#2c3e50;
+    color:var(--color-text);
 }
 
 /* Header */
@@ -16,14 +15,14 @@
 }
 
 .reports-page .header h1{
-    font-size:36px;
+    font-size:34px;
     margin:0;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
     font-weight:700;
 }
 
 .reports-page .header p{
-    color:#6c7a89;
+    color:var(--color-muted);
     margin-top:6px;
 }
 
@@ -33,10 +32,10 @@
     display:flex;
     align-items:flex-end;
     gap:16px;
-    background:#fff;
+    background:var(--color-surface);
     padding:20px;
     border-radius:16px;
-    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    box-shadow:var(--shadow-sm);
     margin-bottom:30px;
     flex-wrap:wrap;
 }
@@ -50,18 +49,18 @@
 .filter-field label{
     font-weight:600;
     font-size:13px;
-    color:#6c7a89;
+    color:var(--color-muted);
 }
 
 .filter-field input{
     padding:10px 14px;
-    border:1px solid #d7dee8;
+    border:1px solid var(--color-border);
     border-radius:10px;
     font-size:14px;
 }
 
 .reports-filters .add-button{
-    background:linear-gradient(135deg,#1f3a5f,#3f6ea5);
+    background:var(--color-primary-gradient);
     color:#fff;
     border:none;
     padding:12px 28px;
@@ -93,16 +92,17 @@
 /* Table cards (also used for revenue/status breakdown cards) */
 
 .reports-page .table-card{
-    background:#fff;
-    border-radius:15px;
+    background:var(--color-surface);
+    border-radius:var(--radius-md);
     padding:22px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:var(--shadow-sm);
 }
 
 .reports-page .table-card h2{
     margin:0 0 16px;
     font-size:18px;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
+    font-family:var(--font-heading);
 }
 
 .reports-page table{
@@ -113,13 +113,14 @@
 .reports-page th{
     text-align:left;
     padding:12px;
-    background:#f6f6f6;
+    background:var(--color-bg);
     font-size:14px;
+    color:var(--color-muted);
 }
 
 .reports-page td{
     padding:12px;
-    border-top:1px solid #eee;
+    border-top:1px solid var(--color-border);
     font-size:14px;
 }
 
@@ -136,7 +137,7 @@
     justify-content:space-between;
     align-items:center;
     padding:10px 4px;
-    border-bottom:1px solid #f2f4f7;
+    border-bottom:1px solid var(--color-border);
 }
 
 .breakdown-row:last-child{
@@ -154,23 +155,23 @@
 }
 
 .status-pending{
-    background:#fff4e0;
-    color:#c98a13;
+    background:var(--color-warning-bg);
+    color:var(--color-warning);
 }
 
 .status-confirmed{
-    background:#e6f0ff;
-    color:#1f5fc9;
+    background:var(--color-info-bg);
+    color:var(--color-info);
 }
 
 .status-completed{
-    background:#e8f8ee;
-    color:#198754;
+    background:var(--color-success-bg);
+    color:var(--color-success);
 }
 
 .status-cancelled{
-    background:#fdeaea;
-    color:#dc3545;
+    background:var(--color-danger-bg);
+    color:var(--color-danger);
 }
 
 /* Loading */
@@ -181,7 +182,7 @@
     justify-content:center;
     align-items:center;
     font-size:24px;
-    color:#1f3a5f;
+    color:var(--color-primary-dark);
 }
 
 /* Responsive */
@@ -217,6 +218,10 @@
         display:block;
         overflow-x:auto;
         white-space:nowrap;
+    }
+
+    .reports-grid{
+        gap:16px;
     }
 
 }

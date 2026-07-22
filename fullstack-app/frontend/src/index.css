@@ -1,43 +1,50 @@
 :root{
-  /* Brand */
-  --color-primary: #1f3a5f;
-  --color-primary-light: #3f6ea5;
-  --color-primary-gradient: linear-gradient(135deg, #1f3a5f, #3f6ea5);
+  /* Brand — dusty rose & soft gold */
+  --color-primary: #C77B95;
+  --color-primary-dark: #A85C76;
+  --color-primary-light: #E3A6BC;
+  --color-primary-bg: #FBEEF2;
+  --color-accent: #D4A857;
+  --color-accent-dark: #B98D3E;
+  --color-primary-gradient: linear-gradient(135deg, #C77B95, #D4A857);
 
   /* Surfaces */
-  --color-bg: #f5f7fb;
+  --color-bg: #FDF6F3;
   --color-surface: #ffffff;
-  --color-border: #e3e8ef;
+  --color-border: #F0DDE3;
 
   /* Text */
-  --color-text: #2c3e50;
-  --color-muted: #6c7a89;
+  --color-text: #3A2E35;
+  --color-muted: #8A7680;
 
   /* Semantic */
-  --color-success: #198754;
-  --color-success-bg: #e8f8ee;
-  --color-warning: #c98a13;
-  --color-warning-bg: #fff4e0;
-  --color-danger: #dc3545;
-  --color-danger-bg: #fdeaea;
-  --color-info: #1f5fc9;
-  --color-info-bg: #e6f0ff;
+  --color-success: #6E8F69;
+  --color-success-bg: #EAF2E8;
+  --color-warning: #C98A3D;
+  --color-warning-bg: #FBF0E1;
+  --color-danger: #C1485B;
+  --color-danger-bg: #FBE8EC;
+  --color-info: #8674A1;
+  --color-info-bg: #F1ECF5;
 
-  /* Dashboard stat-card accents */
-  --color-accent-1: #7C3AED;
-  --color-accent-2: #0EA5E9;
-  --color-accent-3: #10B981;
-  --color-accent-4: #F59E0B;
+  /* Dashboard stat-card accents — tinted to the same family */
+  --color-accent-1: #A8729B;
+  --color-accent-2: #8AA6C1;
+  --color-accent-3: #6E8F69;
+  --color-accent-4: #D4A857;
 
   /* Radii & shadows */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --shadow-sm: 0 5px 15px rgba(0, 0, 0, .08);
-  --shadow-md: 0 10px 25px rgba(0, 0, 0, .08);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, .15);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 5px 15px rgba(199, 123, 149, .10);
+  --shadow-md: 0 10px 25px rgba(199, 123, 149, .14);
+  --shadow-lg: 0 20px 60px rgba(58, 46, 53, .16);
 
-  font: 15px/1.5 "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-body: "Poppins", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  font: 15px/1.5 var(--font-body);
   color-scheme: light;
 }
 
@@ -49,6 +56,11 @@ body{
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3{
+  font-family: var(--font-heading);
 }
 
 button,

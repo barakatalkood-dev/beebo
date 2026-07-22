@@ -1,9 +1,16 @@
 .table-card{
-    background:#fff;
+    background:var(--color-surface);
     padding:20px;
-    border-radius:15px;
+    border-radius:var(--radius-md);
     margin-top:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:var(--shadow-sm);
+}
+
+.table-card h2{
+    font-family:var(--font-heading);
+    color:var(--color-primary-dark);
+    font-size:18px;
+    margin:0 0 10px;
 }
 
 table{
@@ -14,12 +21,14 @@ table{
 th{
     text-align:left;
     padding:15px;
-    background:#f6f6f6;
+    background:var(--color-bg);
+    color:var(--color-muted);
+    font-size:13px;
 }
 
 td{
     padding:15px;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid var(--color-border);
 }
 
 .ra-badge{
@@ -31,21 +40,34 @@ td{
 }
 
 .ra-status-pending{
-    background:#fff4e0;
-    color:#c98a13;
+    background:var(--color-warning-bg);
+    color:var(--color-warning);
 }
 
 .ra-status-confirmed{
-    background:#e6f0ff;
-    color:#1f5fc9;
+    background:var(--color-info-bg);
+    color:var(--color-info);
 }
 
 .ra-status-completed{
-    background:#e8f8ee;
-    color:#198754;
+    background:var(--color-success-bg);
+    color:var(--color-success);
 }
 
 .ra-status-cancelled{
-    background:#fdeaea;
-    color:#dc3545;
+    background:var(--color-danger-bg);
+    color:var(--color-danger);
+}
+
+@media (max-width: 700px){
+
+    .table-card{
+        padding:14px;
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:520px;
+    }
+
 }
