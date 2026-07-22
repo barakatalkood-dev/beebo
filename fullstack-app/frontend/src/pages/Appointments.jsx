@@ -184,10 +184,6 @@ function Appointments() {
           <h1>Appointments</h1>
           <p>Manage customer appointments and services</p>
         </div>
-
-        <button className="add-button" onClick={() => setOpenAdd(true)}>
-          + New Appointment
-        </button>
       </div>
 
       <div className="toolbar">
@@ -198,6 +194,10 @@ function Appointments() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+
+        <button className="add-button" onClick={() => setOpenAdd(true)}>
+          + New Appointment
+        </button>
       </div>
 
       <h3 className="table-section-title">Active</h3>
